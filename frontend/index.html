@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>AI Disaster Prediction System</title>
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css"/>
+
+    <style>
+        /* Small extra polish (optional but nice) */
+        .controls {
+            margin-bottom: 15px;
+        }
+
+        .controls button {
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>AI Disaster Prediction System</h1>
+
+    <!-- 🔘 CONTROL BUTTONS -->
+    <div class="controls">
+        <button onclick="predictLocation()">📍 Predict Current Location</button>
+        <button onclick="generateHeatmap()">🔥 Generate Heatmap</button>
+        <button onclick="clearHeatmap()">❌ Clear Heatmap</button>
+    </div>
+
+    <!-- 📊 OUTPUT -->
+    <h2 id="result"></h2>
+    <h3 id="confidence"></h3>
+
+    <!-- 🗺 MAP -->
+    <div id="map"></div>
+
+    <!-- 🟢🔴 LEGEND -->
+    <div style="margin-top:10px;">
+        <span style="color:green;">● Safe</span>
+        &nbsp;&nbsp;
+        <span style="color:red;">● High Risk</span>
+    </div>
+
+</div>
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<!-- 🔥 Heatmap Plugin -->
+<script src="https://unpkg.com/leaflet.heat/dist/leaflet-heat.js"></script>
+
+<!-- Your Script -->
+<script src="script.js"></script>
+
+</body>
+</html>
